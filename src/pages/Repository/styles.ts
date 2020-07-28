@@ -28,15 +28,44 @@ export const RepositoryInfo = styled.section`
   header {
     display: flex;
     align-items: center;
+
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+
+    div {
+      margin-left: 24px;
+      strong {
+        font-size: 36px;
+        color: #3d3d4d;
+      }
+      p {
+        font-size: 18px;
+        color: #737380;
+        margin-top: 4px;
+      }
+    }
   }
 
-  img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-  }
+  ul {
+    display: flex;
+    list-style: none;
+    margin-top: 40px;
 
-  div {
-    margin-left: 24px;
+    li {
+      strong {
+        display: block;
+        font-size: 36px;
+        color: #3d3d4d;
+      }
+
+      span {
+        display: block;
+        margin-top: 4px;
+        color: #6c6c80;
+      }
+    }
   }
 `;
