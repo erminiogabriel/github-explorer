@@ -49,7 +49,9 @@ const Dashboard: React.FC = () => {
     }
 
     try {
-      const response = await api.get<Repository>(`repos/${newRepo}`);
+      const response = await api.get<Repository>(
+        `search/repositories?q=${newRepo}`,
+      );
 
       const repository = response.data;
 
@@ -80,15 +82,15 @@ const Dashboard: React.FC = () => {
         {repositories.map(repository => (
           <Link
             key={repository.full_name}
-            to={`/repositories/${repository.full_name}`}
+            to={`/repositories/${repository.items[0].full_name}`}
           >
             <img
-              src={repository.owner.avatar_url}
-              alt={repository.owner.login}
+              src={repository.items[0].owner.avatar_url}
+              alt={repository.items[0].owner.login}
             />
             <div>
-              <strong>{repository.full_name}</strong>
-              <p>{repository.description}</p>
+              <strong>{repository.items[0].full_name}</strong>
+              <p>{repository.items[0].description}</p>
             </div>
 
             <FiChevronRight size={20} />
